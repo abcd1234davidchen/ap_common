@@ -1,3 +1,7 @@
+## 0.0.4
+
+ - **FEAT**: update GDG on Campus NKUST x ITC information". ([b2e1c200](https://github.com/abc873693/ap_common/commit/b2e1c200374c0090c9888f6642dc1d8a197ed661))
+
 ## 0.0.3
 
  - **FIX**: `ApAssets` path error. ([558e5445](https://github.com/abc873693/ap_common/commit/558e54451ed7ae1d1d0a9de2e74a8c2172845b9b))
