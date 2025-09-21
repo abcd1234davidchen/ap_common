@@ -15,6 +15,36 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`ap_common_flutter_ui` - `v0.0.5`](#ap_common_flutter_ui---v005)
+ - [`ap_common` - `v0.26.0+2`](#ap_common---v02602)
+ - [`ap_common_announcement_ui` - `v0.0.3+2`](#ap_common_announcement_ui---v0032)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `ap_common` - `v0.26.0+2`
+ - `ap_common_announcement_ui` - `v0.0.3+2`
+
+---
+
+#### `ap_common_flutter_ui` - `v0.0.5`
+
+ - **FEAT**(flutter_ui): `PdfView` custom error messageOB. ([0426059d](https://github.com/abc873693/ap_common/commit/0426059d16d364bd6ebf02398ffea13628119c6f))
+
+
+## 2025-09-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`ap_common_flutter_core` - `v0.0.4`](#ap_common_flutter_core---v004)
  - [`ap_common_flutter_platform` - `v0.0.5`](#ap_common_flutter_platform---v005)
  - [`ap_common_flutter_ui` - `v0.0.4`](#ap_common_flutter_ui---v004)
