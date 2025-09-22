@@ -55,7 +55,8 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
   }) async {
     await analytics?.logEvent(
       name: name,
-      parameters: parameters,
+      parameters:
+          parameters == null ? null : Map<String, Object>.from(parameters),
     );
   }
 
@@ -65,8 +66,8 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
     if (userInfo.department != null && userInfo.department!.isNotEmpty) {
       await analytics?.logEvent(
         name: 'user_info',
-        parameters: <String, dynamic>{
-          AnalyticsConstants.department: userInfo.department,
+        parameters: <String, Object>{
+          AnalyticsConstants.department: userInfo.department!,
         },
       );
       AnalyticsUtil.instance.setUserProperty(
@@ -98,7 +99,7 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
   }) async {
     await analytics?.logEvent(
       name: 'ap_api',
-      parameters: <String, dynamic>{
+      parameters: <String, Object>{
         'type': type,
         'status': status,
         'message': message,
@@ -110,7 +111,7 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
   Future<void> logCalculateUnits(double seconds) async {
     await analytics?.logEvent(
       name: 'calculate_units_time',
-      parameters: <String, dynamic>{
+      parameters: <String, Object>{
         'time': seconds,
       },
     );
@@ -121,7 +122,7 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
   Future<void> logTimeEvent(String name, double seconds) async {
     await analytics?.logEvent(
       name: name,
-      parameters: <String, dynamic>{
+      parameters: <String, Object>{
         'time': seconds,
       },
     );
@@ -131,7 +132,7 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
   Future<void> logCaptchaErrorEvent(String tag, int count) async {
     await analytics?.logEvent(
       name: '${tag}_captcha_error',
-      parameters: <String, dynamic>{
+      parameters: <String, Object>{
         'count': count,
       },
     );
@@ -141,7 +142,7 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
   Future<void> logLeavesImageSize(File source) async {
     await analytics?.logEvent(
       name: 'leaves_image_pick',
-      parameters: <String, dynamic>{
+      parameters: <String, Object>{
         'image_size': source.lengthSync() / 1024 / 1024,
       },
     );
@@ -150,7 +151,7 @@ class FirebaseAnalyticsUtils extends AnalyticsUtil {
   Future<void> logLeavesImageCompressSize(File source, File result) async {
     await analytics?.logEvent(
       name: 'leaves_image_compress',
-      parameters: <String, dynamic>{
+      parameters: <String, Object>{
         'image_original_size': source.lengthSync() / 1024 / 1024,
         'image_compress_size': result.lengthSync() / 1024 / 1024,
       },
