@@ -8,7 +8,7 @@ class ImgurHelper {
   ImgurHelper() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://api.imgur.com',
+        baseUrl: 'https://api.imgbb.com/1',
       ),
     );
   }
@@ -19,29 +19,28 @@ class ImgurHelper {
 
   late Dio dio;
 
-  static const String clientId = 'bf8e32144d00b04';
+  static const String apiKey = '20778f37dcc08538363199547e461796';
 
   static ImgurHelper? _instance;
 
   Future<ImgurUploadData?> uploadImageToImgur({
     required XFile file,
+    DateTime? expireTime,
     GeneralCallback<ImgurUploadData?>? callback,
   }) async {
     try {
       final Uint8List bytes = await file.readAsBytes();
       final Response<Map<String, dynamic>> response = await dio.post(
-        '/3/image',
-        options: Options(
-          headers: <String, String>{
-            'Authorization': 'Client-ID $clientId',
-          },
-        ),
+        '/upload',
+        queryParameters: <String, dynamic>{
+          'key': apiKey,
+        },
         data: FormData.fromMap(
           <String, dynamic>{
-            'image': MultipartFile.fromBytes(
-              bytes,
-              filename: p.split(file.path).last,
-            ),
+            'image': MultipartFile.fromBytes(bytes),
+            'name': p.split(file.path).last,
+            if (expireTime != null)
+              'expiration': (expireTime.millisecondsSinceEpoch / 1000).round(),
           },
         ),
       );

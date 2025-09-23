@@ -149,6 +149,7 @@ packages:
     dependency: "direct dev"
     description:
       name: lint
+<<<<<<< Updated upstream
       sha256: d758a5211fce7fd3f5e316f804daefecdc34c7e53559716125e6da7388ae8565
       url: "https://pub.dev"
     source: hosted
@@ -161,6 +162,12 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.12.16+1"
+=======
+      sha256: "2a1da23938013e5ec7cba18b97376fa685968ce96ae752c27b16742489006af2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.6.2"
+>>>>>>> Stashed changes
   melos:
     dependency: "direct dev"
     description:
@@ -244,6 +251,7 @@ packages:
   pubspec:
     dependency: transitive
     description:
+<<<<<<< Updated upstream
       name: pubspec
       sha256: f534a50a2b4d48dc3bc0ec147c8bd7c304280fff23b153f3f11803c4d49d927e
       url: "https://pub.dev"
@@ -257,6 +265,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.2"
+=======
+      name: pubspec_parse
+      sha256: "81876843eb50dc2e1e5b151792c9a985c5ed2536914115ed04e9c8528f6647b0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.0"
+>>>>>>> Stashed changes
   source_span:
     dependency: transitive
     description:
@@ -346,5 +361,9 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
+<<<<<<< Updated upstream
   dart: ">=3.4.0 <4.0.0"
+=======
+  dart: ">=3.5.0 <4.0.0"
+>>>>>>> Stashed changes
   flutter: ">=3.24.0"
