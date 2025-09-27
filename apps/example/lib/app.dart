@@ -35,7 +35,7 @@ class MyAppState extends State<MyApp> with WidgetsBindingObserver {
     themeMode = ThemeMode.values[
         PreferenceUtil.instance.getInt(Constants.PREF_THEME_MODE_INDEX, 0)];
     WidgetsBinding.instance.addObserver(this);
-    Future<void>.microtask(() async {
+    Future<void>.microtask(() {
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(

@@ -34,7 +34,6 @@ class UserInfoScaffoldState extends State<UserInfoScaffold> {
       case BarCodeMode.code39:
         return ApImageIcons.qrcode;
       case BarCodeMode.qrCode:
-      default:
         return ApImageIcons.barcode;
     }
   }

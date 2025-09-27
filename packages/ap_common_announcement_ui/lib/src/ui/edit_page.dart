@@ -103,7 +103,6 @@ class _AnnouncementEditPageState extends State<AnnouncementEditPage> {
           const SizedBox(height: 8.0),
         ];
       case _ImgurUploadState.noFile:
-      default:
         return <Widget>[
           Text(app.imgurUploadDescription),
           const SizedBox(height: 8.0),
@@ -363,7 +362,7 @@ class _AnnouncementEditPageState extends State<AnnouncementEditPage> {
                       vertical: 4.0,
                     ),
                   ),
-                  onPressed: () async {
+                  onPressed: () {
                     setState(() {
                       expireTime = null;
                     });

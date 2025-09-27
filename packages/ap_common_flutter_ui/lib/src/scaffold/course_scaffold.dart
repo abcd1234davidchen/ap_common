@@ -295,8 +295,7 @@ class CourseScaffoldState extends State<CourseScaffold> {
         floatingActionButton: showSearchButton!
             ? FloatingActionButton(
                 onPressed: () {
-                  AnalyticsUtil.instance
-                      .logEvent('course_search_button_click');
+                  AnalyticsUtil.instance.logEvent('course_search_button_click');
                   _pickSemester();
                 },
                 child: const Icon(Icons.search),
@@ -752,7 +751,7 @@ class _CourseContentState extends State<CourseContent> {
                     height: 24.0,
                     width: 24.0,
                   ),
-                  onPressed: () async {
+                  onPressed: () {
                     final DateFormat format = DateFormat('HH:mm');
                     final DateTime startTime =
                         format.parse(widget.timeCode.startTime);

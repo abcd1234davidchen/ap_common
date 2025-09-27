@@ -198,7 +198,7 @@ class ChangeLanguageItem extends StatelessWidget {
             title: ap.language,
             items: languageTextList,
             index: languageIndex,
-            onSelected: (int index) async {
+            onSelected: (int index) {
               Locale locale;
               final String code = ApSupportLanguage.values[index].code;
               switch (index) {
@@ -218,7 +218,6 @@ class ChangeLanguageItem extends StatelessWidget {
                     code,
                     code == ApSupportLanguageConstants.zh ? 'TW' : null,
                   );
-                  break;
               }
               onChange.call(locale);
               PreferenceUtil.instance
