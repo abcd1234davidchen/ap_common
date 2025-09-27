@@ -1,3 +1,11 @@
+## 0.0.3+2
+
+ - Update a dependency to the latest release.
+
+## 0.0.3+1
+
+ - Update a dependency to the latest release.
+
 ## 0.0.3
 
  - **FIX**: pub publish requirement. ([1dc81f7d](https://github.com/abc873693/ap_common/commit/1dc81f7dcf5a1445aa14b66b6d2004b7d94ad6b2))

@@ -1,3 +1,8 @@
+## 0.5.1
+
+ - **FIX**(ap_common_plugin): android plugin register setting. ([07968966](https://github.com/abc873693/ap_common/commit/07968966be3576952eb924832048e51292a877e4))
+ - **FEAT**: upgrade package flutter 3.29 compatible. ([54ae5f08](https://github.com/abc873693/ap_common/commit/54ae5f087f95858e551b0a78008072f74faaa17b))
+
 ## 0.5.0-dev.4
 
  - fix(ap_common_plugin): android plugin register setting

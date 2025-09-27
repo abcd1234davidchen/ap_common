@@ -14,12 +14,14 @@ class PdfView extends StatefulWidget {
     this.onRefresh,
     this.data,
     this.fileName,
+    this.errorMessage,
   });
 
   final PdfState state;
   final Function()? onRefresh;
   final Uint8List? data;
   final String? fileName;
+  final String? errorMessage;
 
   @override
   _PdfViewState createState() => _PdfViewState();
@@ -88,7 +90,8 @@ class _PdfViewState extends State<PdfView> {
         },
         child: HintContent(
           icon: ApIcon.error,
-          content: ApLocalizations.of(context).clickToRetry,
+          content:
+              widget.errorMessage ?? ApLocalizations.of(context).clickToRetry,
         ),
       );
 }
