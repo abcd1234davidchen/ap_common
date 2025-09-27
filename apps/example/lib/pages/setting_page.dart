@@ -52,10 +52,7 @@ class SettingPageState extends State<SettingPage> {
             SettingTitle(text: ap.notificationItem),
             const CheckCourseNotifyItem(),
             const ClearAllNotifyItem(),
-            const Divider(
-              color: Colors.grey,
-              height: 0.5,
-            ),
+            const Divider(height: 0.5),
             SettingTitle(text: ap.otherSettings),
             SettingSwitch(
               text: ap.headPhotoSetting,
@@ -86,10 +83,7 @@ class SettingPageState extends State<SettingPage> {
                 ShareDataWidget.of(context)!.data!.update();
               },
             ),
-            const Divider(
-              color: Colors.grey,
-              height: 0.5,
-            ),
+            const Divider(height: 0.5),
             SettingTitle(text: ap.otherInfo),
             SettingItem(
               text: ap.feedback,
