@@ -32,11 +32,11 @@ jobs:
           run-bootstrap: false
           melos-version: '6.1.0'
       - name: 'Bootstrap package'
-        run: melos bootstrap
+        run: melos bootstrap --sdk-path ${{ env.FLUTTER_ROOT }}
       - name: Run Test
-        run: melos run test --no-select
+        run: melos run test --no-select --sdk-path ${{ env.FLUTTER_ROOT }}
       - name: Analyze files
-        run: melos run analyze-ci
+        run: melos run analyze-ci --sdk-path ${{ env.FLUTTER_ROOT }}
       - name: Build Web
         run: flutter build web
         working-directory: ./apps/example
