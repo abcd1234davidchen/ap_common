@@ -289,7 +289,7 @@ class CourseScaffoldState extends State<CourseScaffold> {
           ],
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endContained,
-        floatingActionButton: !isLandscape!
+        floatingActionButton: !isLandscape
             ? FloatingActionButton(
                 onPressed: () {
                   setState(
