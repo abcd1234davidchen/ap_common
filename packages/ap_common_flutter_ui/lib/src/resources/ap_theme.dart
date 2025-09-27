@@ -270,11 +270,11 @@ class ApTheme extends InheritedWidget {
 
   static ThemeData get light => ThemeData(
         //platform: TargetPlatform.iOS,
-        useMaterial3: false,
+        useMaterial3: true,
         brightness: Brightness.light,
-        appBarTheme: const AppBarTheme(
-          color: ApColors.blue500,
-        ),
+        // appBarTheme: const AppBarTheme(
+        //   color: ApColors.blue500,
+        // ),
         indicatorColor: ApColors.blue500,
         pageTransitionsTheme: _pageTransitionsTheme,
         unselectedWidgetColor: ApColors.grey500,
@@ -288,19 +288,19 @@ class ApTheme extends InheritedWidget {
           ),
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: ApColors.blue500,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: ApColors.primary,
         ),
       );
 
   static ThemeData get dark => ThemeData(
         //platform: TargetPlatform.iOS,
-        useMaterial3: false,
+        useMaterial3: true,
         brightness: Brightness.dark,
         pageTransitionsTheme: _pageTransitionsTheme,
-        appBarTheme: const AppBarTheme(
-          color: ApColors.blueDark,
-        ),
+        // appBarTheme: const AppBarTheme(
+        //   color: ApColors.blueDark,
+        // ),
         indicatorColor: ApColors.blue300,
         scaffoldBackgroundColor: ApColors.onyx,
         unselectedWidgetColor: ApColors.grey200,
@@ -314,9 +314,9 @@ class ApTheme extends InheritedWidget {
           ),
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        colorScheme: ColorScheme.fromSwatch(
+        colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.dark,
-          accentColor: ApColors.blue300,
+          seedColor: ApColors.blue300,
         ),
       );
 }
