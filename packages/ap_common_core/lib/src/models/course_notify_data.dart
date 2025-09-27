@@ -72,7 +72,9 @@ class CourseNotifyData {
     for (final CourseNotify value in data) {
       if (value.code == code &&
           value.startTime == startTime &&
-          value.weekday == weekIndex) return value;
+          value.weekday == weekIndex) {
+        return value;
+      }
     }
     return null;
   }

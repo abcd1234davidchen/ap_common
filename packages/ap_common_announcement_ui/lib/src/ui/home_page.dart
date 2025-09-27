@@ -102,7 +102,7 @@ class _AnnouncementHomePageState extends State<AnnouncementHomePage> {
           if (state == _State.done &&
               loginData?.level != PermissionLevel.user) ...<Widget>[
             TextButton(
-              onPressed: () async {
+              onPressed: () {
                 setState(() {
                   onlyShowNotReview = !onlyShowNotReview!;
                 });
@@ -137,7 +137,7 @@ class _AnnouncementHomePageState extends State<AnnouncementHomePage> {
             IconButton(
               icon: const Icon(Icons.playlist_remove),
               tooltip: ap.blackList,
-              onPressed: () async {
+              onPressed: () {
                 ApUtils.pushCupertinoStyle(
                   context,
                   const BlackListPage(),
@@ -152,7 +152,9 @@ class _AnnouncementHomePageState extends State<AnnouncementHomePage> {
               tooltip: ap.logout,
               onPressed: () async {
                 if (AnnouncementHelper.instance.loginType ==
-                    AnnouncementLoginType.google) await _googleSignIn.signOut();
+                    AnnouncementLoginType.google) {
+                  await _googleSignIn.signOut();
+                }
                 setState(() {
                   PreferenceUtil.instance.setBool(
                     ApConstants.announcementIsLogin,
@@ -378,7 +380,7 @@ class _AnnouncementHomePageState extends State<AnnouncementHomePage> {
           const SizedBox(height: 24.0),
           ApButton(
             text: ap.login,
-            onPressed: () async {
+            onPressed: () {
               _login(AnnouncementLoginType.normal);
             },
           ),
@@ -386,7 +388,7 @@ class _AnnouncementHomePageState extends State<AnnouncementHomePage> {
         SizedBox(height: widget.enableNormalLogin ? 16.0 : 24.0),
         ApButton(
           text: 'Sign In with Google',
-          onPressed: () async {
+          onPressed: () {
             _login(AnnouncementLoginType.google);
           },
         ),
@@ -394,7 +396,7 @@ class _AnnouncementHomePageState extends State<AnnouncementHomePage> {
           const SizedBox(height: 16.0),
           ApButton(
             text: 'Sign In with Apple',
-            onPressed: () async {
+            onPressed: () {
               _login(AnnouncementLoginType.apple);
             },
           ),
@@ -454,7 +456,7 @@ class _AnnouncementHomePageState extends State<AnnouncementHomePage> {
                         ? ApTheme.of(context).red
                         : ApTheme.of(context).yellow,
                   ),
-                  onPressed: () async {
+                  onPressed: () {
                     showDialog(
                       context: context,
                       builder: (_) => dataType == _DataType.announcement

@@ -361,7 +361,7 @@ class _AnnouncementEditPageState extends State<AnnouncementEditPage> {
                       vertical: 4.0,
                     ),
                   ),
-                  onPressed: () async {
+                  onPressed: () {
                     setState(() {
                       expireTime = null;
                     });

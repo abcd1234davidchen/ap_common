@@ -29,7 +29,7 @@ class FirebaseMessagingUtils {
   static bool get isSupported =>
       kIsWeb || Platform.isAndroid || Platform.isIOS || Platform.isMacOS;
 
-  Future<bool> isBrowserSupported() async {
+  Future<bool> isBrowserSupported() {
     return FirebaseMessaging.instance.isSupported();
   }
 
@@ -43,7 +43,7 @@ class FirebaseMessagingUtils {
     if (!FirebaseMessagingUtils.isSupported || !(await isBrowserSupported())) {
       return;
     }
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       if (message.notification != null) {
         debugPrint('onMessage: $message');
         NotificationUtil.instance.show(

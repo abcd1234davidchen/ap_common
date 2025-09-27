@@ -299,7 +299,7 @@ class ApNotificationUtil extends NotificationUtil {
     await flutterLocalNotificationsPlugin.cancel(id);
   }
 
-  Future<List<PendingNotificationRequest>> getPendingNotificationList() async {
+  Future<List<PendingNotificationRequest>> getPendingNotificationList() {
     return FlutterLocalNotificationsPlugin().pendingNotificationRequests();
   }
 

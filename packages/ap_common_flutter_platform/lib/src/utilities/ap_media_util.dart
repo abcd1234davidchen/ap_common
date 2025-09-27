@@ -38,7 +38,6 @@ class ApMediaUtil extends MediaUtil {
       if (hasGrantPermission == PermissionState.authorized ||
           hasGrantPermission == PermissionState.limited) {
         final Uint8List pngBytes = byteData.buffer.asUint8List();
-        bool success = true;
         String filePath = '$fileName.png';
         if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
           final String tempPath = path.join(
@@ -46,14 +45,13 @@ class ApMediaUtil extends MediaUtil {
             filePath,
           );
           final File file = await File(tempPath).writeAsBytes(pngBytes);
-          final AssetEntity? imageEntity =
+          final AssetEntity imageEntity =
               await PhotoManager.editor.saveImageWithPath(
             file.path,
             title: fileName,
           );
           file.delete();
-          if (kDebugMode) debugPrint(imageEntity?.title);
-          success = imageEntity != null;
+          if (kDebugMode) debugPrint(imageEntity.title);
         } else {
           filePath = await FileSaver.instance.saveFile(
             name: '$fileName.png',
@@ -61,12 +59,10 @@ class ApMediaUtil extends MediaUtil {
           );
         }
         onSuccess?.call(
-          success
-              ? GeneralResponse(
-                  statusCode: 200,
-                  message: '$successMessage\n$filePath',
-                )
-              : GeneralResponse.unknownError(),
+          GeneralResponse(
+            statusCode: 200,
+            message: '$successMessage\n$filePath',
+          ),
         );
       } else {
         onSuccess?.call(

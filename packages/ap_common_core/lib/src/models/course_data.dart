@@ -47,7 +47,9 @@ class CourseData {
       if (course.times.isEmpty) continue;
       for (final SectionTime section in course.times) {
         if (section.weekday == DateTime.saturday ||
-            section.weekday == DateTime.sunday) return true;
+            section.weekday == DateTime.sunday) {
+          return true;
+        }
       }
     }
     return false;

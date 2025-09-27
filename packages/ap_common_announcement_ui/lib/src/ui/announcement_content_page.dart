@@ -145,7 +145,7 @@ class AnnouncementContentPageState extends State<AnnouncementContentPage> {
             color: ApTheme.of(context).greyText,
           ),
           options: const LinkifyOptions(humanize: false),
-          onOpen: (LinkableElement link) async =>
+          onOpen: (LinkableElement link) =>
               PlatformUtil.instance.launchUrl(link.url),
         ),
       ),

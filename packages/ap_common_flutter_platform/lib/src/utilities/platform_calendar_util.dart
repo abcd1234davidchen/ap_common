@@ -26,7 +26,7 @@ class ApPlatformCalendarUtil extends PlatformCalendarUtil {
     required DateTime endDate,
     bool allDay = false,
     Map<String, dynamic>? extra,
-  }) async {
+  }) {
     return Add2Calendar.addEvent2Cal(
       Event(
         title: title,
