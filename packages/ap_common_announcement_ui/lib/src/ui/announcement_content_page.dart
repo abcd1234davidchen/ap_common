@@ -42,7 +42,6 @@ class AnnouncementContentPageState extends State<AnnouncementContentPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(app.announcements),
-        backgroundColor: ApTheme.of(context).blue,
       ),
       body: _homebody(),
     );
@@ -93,7 +92,6 @@ class AnnouncementContentPageState extends State<AnnouncementContentPage> {
           Scaffold(
             appBar: AppBar(
               title: Text(widget.announcement.title),
-              backgroundColor: ApTheme.of(context).blue,
             ),
             body: PhotoView(
               imageProvider: (ApUtils.isSupportCacheNetworkImage
@@ -147,7 +145,7 @@ class AnnouncementContentPageState extends State<AnnouncementContentPage> {
             color: ApTheme.of(context).greyText,
           ),
           options: const LinkifyOptions(humanize: false),
-          onOpen: (LinkableElement link) async =>
+          onOpen: (LinkableElement link) =>
               PlatformUtil.instance.launchUrl(link.url),
         ),
       ),

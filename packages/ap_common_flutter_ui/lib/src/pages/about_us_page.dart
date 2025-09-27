@@ -86,7 +86,6 @@ class AboutUsPageState extends State<AboutUsPage> {
                 },
               ),
             ],
-            backgroundColor: ApTheme.of(context).blue,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
                 widget.assetImage,
@@ -284,7 +283,7 @@ class AboutUsPageState extends State<AboutUsPage> {
                   color: ApTheme.of(context).grey,
                 ),
                 options: const LinkifyOptions(humanize: false),
-                onOpen: (LinkableElement link) async =>
+                onOpen: (LinkableElement link) =>
                     PlatformUtil.instance.launchUrl(link.url),
               ),
             ],

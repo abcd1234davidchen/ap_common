@@ -1,3 +1,7 @@
+## 0.0.5
+
+ - **FEAT**: upgrade package flutter 3.29 compatible. ([54ae5f08](https://github.com/abc873693/ap_common/commit/54ae5f087f95858e551b0a78008072f74faaa17b))
+
 ## 0.0.4
 
  - **FEAT**: upgrade package for package `web` 1.0.0. ([c0ac3e33](https://github.com/abc873693/ap_common/commit/c0ac3e331b64a436e909a8ec7ab2983974ae37a4))

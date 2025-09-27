@@ -44,7 +44,6 @@ class SettingPageState extends State<SettingPage> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(ap.settings),
-        backgroundColor: ApTheme.of(context).blue,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -53,10 +52,7 @@ class SettingPageState extends State<SettingPage> {
             SettingTitle(text: ap.notificationItem),
             const CheckCourseNotifyItem(),
             const ClearAllNotifyItem(),
-            const Divider(
-              color: Colors.grey,
-              height: 0.5,
-            ),
+            const Divider(height: 0.5),
             SettingTitle(text: ap.otherSettings),
             SettingSwitch(
               text: ap.headPhotoSetting,
@@ -87,10 +83,7 @@ class SettingPageState extends State<SettingPage> {
                 ShareDataWidget.of(context)!.data!.update();
               },
             ),
-            const Divider(
-              color: Colors.grey,
-              height: 0.5,
-            ),
+            const Divider(height: 0.5),
             SettingTitle(text: ap.otherInfo),
             SettingItem(
               text: ap.feedback,

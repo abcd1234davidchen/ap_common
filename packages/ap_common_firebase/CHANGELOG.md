@@ -1,3 +1,7 @@
+## 0.17.0+1
+
+ - Update a dependency to the latest release.
+
 ## 0.17.0-dev.4
 
  - **FIX**: remove useless implement instance. ([a7ffaeb0](https://github.com/abc873693/ap_common/commit/a7ffaeb07914c1d1fbe32919cce95c5708843230))

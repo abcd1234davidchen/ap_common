@@ -73,7 +73,7 @@ class _DialogUtilsTestPageState extends State<DialogUtilsTestPage> {
             onTap: () {
               AppTrackingUtils.show(
                 context: context,
-                onTap: () async {
+                onTap: () {
                   Navigator.of(context).pop();
                 },
               );

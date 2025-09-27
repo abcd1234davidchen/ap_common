@@ -3,6 +3,85 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-09-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`ap_common_flutter_ui` - `v0.0.5`](#ap_common_flutter_ui---v005)
+ - [`ap_common` - `v0.26.0+2`](#ap_common---v02602)
+ - [`ap_common_announcement_ui` - `v0.0.3+2`](#ap_common_announcement_ui---v0032)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `ap_common` - `v0.26.0+2`
+ - `ap_common_announcement_ui` - `v0.0.3+2`
+
+---
+
+#### `ap_common_flutter_ui` - `v0.0.5`
+
+ - **FEAT**(flutter_ui): `PdfView` custom error messageOB. ([0426059d](https://github.com/abc873693/ap_common/commit/0426059d16d364bd6ebf02398ffea13628119c6f))
+
+
+## 2025-09-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`ap_common_flutter_core` - `v0.0.4`](#ap_common_flutter_core---v004)
+ - [`ap_common_flutter_platform` - `v0.0.5`](#ap_common_flutter_platform---v005)
+ - [`ap_common_flutter_ui` - `v0.0.4`](#ap_common_flutter_ui---v004)
+ - [`ap_common_plugin` - `v0.5.1`](#ap_common_plugin---v051)
+ - [`ap_common_firebase` - `v0.17.0+1`](#ap_common_firebase---v01701)
+ - [`ap_common_announcement_ui` - `v0.0.3+1`](#ap_common_announcement_ui---v0031)
+ - [`ap_common` - `v0.26.0+1`](#ap_common---v02601)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `ap_common_firebase` - `v0.17.0+1`
+ - `ap_common_announcement_ui` - `v0.0.3+1`
+ - `ap_common` - `v0.26.0+1`
+
+---
+
+#### `ap_common_flutter_core` - `v0.0.4`
+
+ - **FEAT**(flutter_core): update `multiple_localization` to any version. ([a4114e01](https://github.com/abc873693/ap_common/commit/a4114e0182568d90603041118d59130fbdbd3aa7))
+ - **FEAT**: update GDG on Campus NKUST x ITC information". ([b2e1c200](https://github.com/abc873693/ap_common/commit/b2e1c200374c0090c9888f6642dc1d8a197ed661))
+
+#### `ap_common_flutter_platform` - `v0.0.5`
+
+ - **FEAT**: upgrade package flutter 3.29 compatible. ([54ae5f08](https://github.com/abc873693/ap_common/commit/54ae5f087f95858e551b0a78008072f74faaa17b))
+
+#### `ap_common_flutter_ui` - `v0.0.4`
+
+ - **FEAT**: update GDG on Campus NKUST x ITC information". ([b2e1c200](https://github.com/abc873693/ap_common/commit/b2e1c200374c0090c9888f6642dc1d8a197ed661))
+
+#### `ap_common_plugin` - `v0.5.1`
+
+ - **FIX**(ap_common_plugin): android plugin register setting. ([07968966](https://github.com/abc873693/ap_common/commit/07968966be3576952eb924832048e51292a877e4))
+ - **FEAT**: upgrade package flutter 3.29 compatible. ([54ae5f08](https://github.com/abc873693/ap_common/commit/54ae5f087f95858e551b0a78008072f74faaa17b))
+
+
 ## 2025-02-27
 
 ### Changes

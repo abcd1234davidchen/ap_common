@@ -2,7 +2,7 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
   async:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: async
 <<<<<<< Updated upstream
@@ -49,7 +49,7 @@ packages:
     source: hosted
     version: "1.18.0"
   fake_async:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: fake_async
 <<<<<<< Updated upstream
@@ -74,7 +74,7 @@ packages:
     source: sdk
     version: "0.0.0"
   leak_tracker:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: leak_tracker
 <<<<<<< Updated upstream
@@ -113,13 +113,13 @@ packages:
     source: hosted
     version: "0.12.16+1"
   material_color_utilities:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: material_color_utilities
-      sha256: f7142bb1154231d7ea5f96bc7bde4bda2a0945d2806bb11670e30b850d56bdec
+      sha256: afaac3ebbf67448ab81c891b8e1f2f4d3e7bc19aa36d269c0257b54bc0d9aa79
       url: "https://pub.dev"
     source: hosted
-    version: "0.11.1"
+    version: "0.12.0"
   meta:
     dependency: transitive
     description:
@@ -198,7 +198,7 @@ packages:
     source: hosted
     version: "2.1.4"
   vm_service:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: vm_service
 <<<<<<< Updated upstream
