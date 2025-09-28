@@ -9,37 +9,35 @@ class PrivateCookieManager extends CookieManager {
   PrivateCookieManager(super.cookieJar);
 
   @override
-  Future<void> onResponse(
+  void onResponse(
     Response<dynamic> response,
     ResponseInterceptorHandler handler,
-  ) async {
-    try {
-      await _saveCookies(response);
-      handler.next(response);
-    } catch (e, stackTrace) {
+  ) {
+    _saveCookies(response)
+        .then((_) => handler.next(response))
+        .catchError((dynamic e, dynamic stackTrace) {
       final DioException err = DioException(
         requestOptions: response.requestOptions,
         error: e,
-        stackTrace: stackTrace is StackTrace ? stackTrace : StackTrace.current,
+        stackTrace: stackTrace as StackTrace,
       );
       handler.reject(err, true);
-    }
+    });
   }
 
   @override
-  Future<void> onError(DioException err, ErrorInterceptorHandler handler) async {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     if (err.response != null) {
-      try {
-        await _saveCookies(err.response!);
-        handler.next(err);
-      } catch (e, stackTrace) {
+      _saveCookies(err.response!)
+          .then((_) => handler.next(err))
+          .catchError((dynamic e, dynamic stackTrace) {
         final DioException err0 = DioException(
           requestOptions: err.response!.requestOptions,
           error: e,
-          stackTrace: stackTrace is StackTrace ? stackTrace : StackTrace.current,
+          stackTrace: stackTrace as StackTrace,
         );
         handler.next(err0);
-      }
+      });
     } else {
       handler.next(err);
     }
