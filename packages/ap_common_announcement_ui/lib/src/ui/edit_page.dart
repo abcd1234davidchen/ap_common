@@ -290,6 +290,7 @@ class _AnnouncementEditPageState extends State<AnnouncementEditPage> {
                       );
                       ImgurHelper.instance!.uploadImageToImgur(
                         file: image,
+                        expireTime: expireTime,
                         callback: GeneralCallback<ImgurUploadData>(
                           onFailure: (DioException dioException) {
                             if (dioException.message
