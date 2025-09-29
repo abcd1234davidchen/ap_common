@@ -23,9 +23,9 @@ class ImgurHelper {
 
   static ImgurHelper? _instance;
 
-  Future<ImgurUploadData?> uploadImageToImgur({
+  Future<String?> uploadImage({
     required XFile file,
-    GeneralCallback<ImgurUploadData?>? callback,
+    GeneralCallback<String?>? callback,
   }) async {
     try {
       final Uint8List bytes = await file.readAsBytes();
@@ -48,9 +48,10 @@ class ImgurHelper {
       if (response.statusCode == 200) {
         final ImgurUploadResponse imgurUploadResponse =
             ImgurUploadResponse.fromJson(response.data!);
+        final String? link = imgurUploadResponse.data?.link;
         return callback == null
-            ? imgurUploadResponse.data
-            : callback.onSuccess(imgurUploadResponse.data) as ImgurUploadData;
+            ? link
+            : callback.onSuccess.call(link) as String?;
       } else {
         callback?.onError(
           GeneralResponse(

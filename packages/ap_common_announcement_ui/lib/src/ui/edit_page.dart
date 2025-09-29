@@ -1,5 +1,5 @@
 import 'package:ap_common_announcement_ui/src/api/announcement_helper.dart';
-import 'package:ap_common_announcement_ui/src/api/imgur_helper.dart';
+import 'package:ap_common_announcement_ui/src/api/imgbb_helper.dart';
 import 'package:ap_common_announcement_ui/src/ui/home_page.dart';
 import 'package:ap_common_flutter_ui/ap_common_flutter_ui.dart';
 import 'package:flutter/material.dart';
@@ -288,10 +288,10 @@ class _AnnouncementEditPageState extends State<AnnouncementEditPage> {
                       setState(
                         () => imgurUploadState = _ImgurUploadState.uploading,
                       );
-                      ImgurHelper.instance!.uploadImageToImgur(
+                      ImgbbHelper.instance!.uploadImage(
                         file: image,
                         expireTime: expireTime,
-                        callback: GeneralCallback<ImgurUploadData>(
+                        callback: GeneralCallback<String>(
                           onFailure: (DioException dioException) {
                             if (dioException.message
                                 case final String message?) {
@@ -312,8 +312,8 @@ class _AnnouncementEditPageState extends State<AnnouncementEditPage> {
                                   : _ImgurUploadState.done,
                             );
                           },
-                          onSuccess: (ImgurUploadData? data) {
-                            _imgUrl.text = data!.link!;
+                          onSuccess: (String? data) {
+                            _imgUrl.text = data!;
                             setState(
                               () => imgurUploadState = _ImgurUploadState.done,
                             );

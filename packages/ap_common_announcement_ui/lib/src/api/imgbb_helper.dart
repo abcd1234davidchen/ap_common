@@ -3,12 +3,12 @@ import 'dart:typed_data';
 
 import 'package:ap_common_flutter_core/ap_common_flutter_core.dart';
 
-class ImgurHelper {
-  ImgurHelper() {
+class ImgbbHelper {
+  ImgbbHelper() {
     dio = Dio(
       BaseOptions(
         baseUrl: 'https://api.imgbb.com/1',
-        headers: {
+        headers: <String, String>{
           'Accept': 'application/json',
           'User-Agent': 'Flutter App',
         },
@@ -16,20 +16,20 @@ class ImgurHelper {
     );
   }
 
-  static ImgurHelper? get instance {
-    return _instance ??= ImgurHelper();
+  static ImgbbHelper? get instance {
+    return _instance ??= ImgbbHelper();
   }
 
   late Dio dio;
 
   static const String apiKey = '20778f37dcc08538363199547e461796';
 
-  static ImgurHelper? _instance;
+  static ImgbbHelper? _instance;
 
-  Future<ImgurUploadData?> uploadImageToImgur({
+  Future<String?> uploadImage({
     required XFile file,
     DateTime? expireTime,
-    GeneralCallback<ImgurUploadData?>? callback,
+    GeneralCallback<String?>? callback,
   }) async {
     try {
       final Uint8List bytes = await file.readAsBytes();
@@ -48,30 +48,23 @@ class ImgurHelper {
         ),
       );
       if (response.statusCode == 200) {
-        final Map<String, dynamic> imgbbData =
-            response.data!['data'] as Map<String, dynamic>;
-        final Map<String, dynamic> fullResponse = {
-          'status': response.data!['status'],
-          'success': response.data!['success'],
-          'data': <String, dynamic>{
-            'id': imgbbData['id'],
-            'link': imgbbData['url'],
-            'title': imgbbData['title'],
-            'width': imgbbData['width'],
-            'height': imgbbData['height'],
-            'size': imgbbData['size'],
-            'type': imgbbData['mime'],
-            'name': imgbbData['filename'],
-          },
-        };
-        final ImgurUploadResponse imgurUploadResponse =
-            ImgurUploadResponse.fromJson(fullResponse);
-        if (callback == null) {
-          return imgurUploadResponse.data;
-        } else {
-          callback.onSuccess(imgurUploadResponse.data);
-          return imgurUploadResponse.data;
+        if (response.data?['data'] case final Map<String, dynamic> data?) {
+          if (data['url'] case final String url?) {
+            if (callback == null) {
+              return url;
+            } else {
+              callback.onSuccess(url);
+              return url;
+            }
+          }
         }
+        callback?.onError(
+          GeneralResponse(
+            statusCode: 500,
+            message: ApLocalizations.current.unknownError,
+          ),
+        );
+        return null;
       } else {
         callback?.onError(
           GeneralResponse(
